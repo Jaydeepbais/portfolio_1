@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio — About</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero {
+      padding: calc(var(--unit)*3) calc(100%/15) var(--unit);
+      background: var(--black);
+      color: var(--white);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .page-body {
+      padding: var(--unit) calc(100%/15);
+      max-width: 900px;
+    }
+
+    .page-body p {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a id="logo" href="../index.html">STUDIO</a>
+    <nav>
+      <a href="studio.html">Studio</a>
+      <a href="projects.html">Projects</a>
+      <a href="news.html">News</a>
+      <a href="research.html">Research</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero-sep"></div>
+    <h1 class="header1">Studio</h1>
+  </section>
+
+  <div class="h1"></div>
+
+  <div class="page-body reveal">
+    <p>We are a technology-driven art and design studio operating at the intersection of media arts, neuroscience,
+      architecture, and machine intelligence.</p>
+    <p>Founded in 2014, our practice centers on using data as pigment — transforming vast datasets into immersive
+      sensory experiences that reveal hidden patterns in the world around us.</p>
+    <p>From permanent public installations to ephemeral performances, we explore how machine learning can be used not as
+      a tool of automation, but as a medium for human expression and collective memory.</p>
+  </div>
+
+  <div class="h1"></div>
+  <div class="h1"></div>
+
+  <footer id="contact">
+    <div class="footer-row2" style="border-top:1px solid var(--gray-light); padding-top:var(--unit);">
+      <div class="footer-copy">
+        <div>© JAYDEEP BAIS</div>
+      </div>
+      <div class="footer-social">
+        <a href="#">IG</a><a href="#">FB</a><a href="#">TW</a><a href="#">LI</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

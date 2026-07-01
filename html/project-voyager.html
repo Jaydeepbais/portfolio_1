@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio — Unsupervised — Machine Hallucinations — MoMA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand glitch-text" href="../index.html">JAYDEEP BAIS</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════
+     A — COVER
+════════════════════════ -->
+  <!-- ════════════════════════
+     A — COVER (YOUTUBE VIDEO 16:9)
+ ════════════════════════ -->
+  <div class="youtube-cover">
+    <div id="player"></div>
+    <div id="controls" style="
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background: rgba(0,0,0,0.6);
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;">
+
+      <input type="range" id="volumeSlider" min="0" max="100" value="50">
+    </div>
+  </div>
+
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.getElementsByTagName('script')[0].parentNode.insertBefore(tag, document.getElementsByTagName('script')[0]);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: '90Mj9eO5zso',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,      // hide YouTube's native controls
+          loop: 1,
+          playlist: '90Mj9eO5zso',
+          disablekb: 1,
+          modestbranding: 1,
+          rel: 0
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.setVolume(50);
+    }
+
+    document.getElementById('volumeSlider').addEventListener('input', function (e) {
+      var vol = parseInt(e.target.value, 10);
+      player.setVolume(vol);
+      vol > 0 ? player.unMute() : player.mute();
+    });
+
+    document.getElementById('playPause').addEventListener('click', function () {
+      var state = player.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+        this.textContent = '▶';
+      } else {
+        player.playVideo();
+        this.textContent = '⏸';
+      }
+    });
+  </script>
+
+  <!-- Title Section -->
+  <section class="py-4">
+    <div class="container-fluid">
+      <h1 class="cover-title glitch-text"
+        style="font-size: clamp(24px, 4.5vw, 64px); font-weight: 300; letter-spacing: -.02em; line-height: 1.05; color: var(--fg); margin-top: 2rem;">
+        Voyager —<br> Music Video <br>— Mumbai</h1>
+      <div class="cover-type"
+        style="font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .45); margin-top: 1rem;">
+        CGI</div>
+    </div>
+  </section>
+
+
+
+  <!-- ════════════════════════
+     B — INFO
+════════════════════════ -->
+  <section class="project-info-section">
+    <div class="container-fluid">
+
+      <div class="pd-section-header reveal">
+
+        <span class="pd-section-title glitch-text">Project Info</span>
+      </div>
+
+      <div class="row g-4 g-md-5 reveal">
+        <div class="col-6 col-md-3">
+          <div class="info-label">Type</div>
+          <div class="info-value">Computer Generated Imagery<br>Music Video</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="info-label">Year</div>
+          <div class="info-value">2022</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="info-label">Location</div>
+          <div class="info-value">Mumbai, India<br><br></div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="info-label">Credits</div>
+          <div class="info-value">
+            Transhuman Collective<br>Krunk Culture
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ════════════════════════
+     D — CONCEPT
+════════════════════════ -->
+  <section class="project-concept-section">
+    <div class="container-fluid">
+
+      <div class="pd-section-header reveal">
+
+        <span class="pd-section-title glitch-text">Concept</span>
+      </div>
+
+      <div class="row g-5">
+
+        <div class="col-12 col-md-6 reveal">
+          <div class="concept-text">
+            <p>Voyager is a narrative driven music video that unfolds as a surreal audiovisual
+              odyssey through interstellar space. Subverting classic sci-fi tropes, the cosmic journey takes place not
+              inside a spaceship, but aboard a dreamlike train moving across a lunar landscape. The train’s interior
+              doubles as a moving art gallery showcasing iconic artworks across centuries to explore the deep
+              intersection of human art, technology, space, and time. Utilizing advanced CGI production and meticulous
+              world building, the film culminates in a poetic narrative revelation that Oxygen, the essential
+              element of life, holds the key to the climax, delivering a rich, multi layered visual experience that
+              perfectly mirrors the atmospheric electronic soundscapes of the track.</p>
+            <p></p>
+            <p></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Gallery Images Slideshow -->
+  <section class="py-5" style="border-bottom: 1px solid var(--gray-line);">
+    <div class="container-fluid">
+      <div class="slideshow-wrapper"
+        style="position: relative; width: 100%; aspect-ratio: 21/9; overflow: hidden; border: 1px solid var(--gray-line); background: #111;">
+        <img id="gallery-slideshow" src="../assets/img/Voyager/1.gif" alt="Gallery Slideshow"
+          style="width: 100%; height: 100%; object-fit: cover; transition: opacity 1s ease-in-out;">
+        <div class="nav-right" style="position: absolute; top: 0; right: 0; width: 30%; height: 100%; cursor: pointer;"
+          title="Next image"></div>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      const images = [
+        "../assets/img/Voyager/1.gif",
+        "../assets/img/Voyager/2.gif",
+        "../assets/img/Voyager/3.gif",
+        "../assets/img/Voyager/4.gif"
+      ];
+      let current = 0;
+      const imgEl = document.getElementById('gallery-slideshow');
+      const navRight = document.querySelector('.nav-right');
+      const wrapper = document.querySelector('.slideshow-wrapper');
+
+      // Create dot indicators
+      const dotsContainer = document.createElement('div');
+      dotsContainer.className = 'dots';
+      dotsContainer.style.cssText = 'position:absolute;bottom:10px;width:100%;text-align:center;pointer-events:auto;';
+      const dots = [];
+      images.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.dataset.idx = i;
+        dot.style.cssText = 'display:inline-block;width:8px;height:8px;margin:0 3px;background:#fff;opacity:0.5;border-radius:50%;cursor:pointer;transition:opacity .3s;';
+        if (i === 0) dot.style.opacity = '1';
+        dot.addEventListener('click', () => {
+          current = i;
+          showImage(current);
+        });
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      });
+      wrapper.appendChild(dotsContainer);
+
+      function updateDots(idx) {
+        dots.forEach((dot, i) => {
+          dot.style.opacity = i === idx ? '1' : '0.5';
+        });
+      }
+
+      function showImage(index) {
+        imgEl.style.opacity = '0';
+        setTimeout(() => {
+          imgEl.src = images[index];
+          imgEl.style.opacity = '1';
+          updateDots(index);
+        }, 500);
+      }
+
+      // Auto slideshow every 5 seconds
+      const intervalId = setInterval(() => {
+        current = (current + 1) % images.length;
+        showImage(current);
+      }, 5000);
+
+      // Click navigation (right side)
+      navRight.addEventListener('click', () => {
+        current = (current + 1) % images.length;
+        showImage(current);
+      });
+    })();
+  </script>
+
+
+
+
+
+
+
+  <!-- ════════════════════════
+     FOOTER
+════════════════════════ -->
+  <footer class="py-4 mt-5">
+    <div class="container-fluid">
+      <div class="sep mb-4"></div>
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <div class="footer-copy">
+          <div>© JAYDEEP BAIS</div>
+        </div>
+        <div class="footer-social ms-auto">
+          <a href="#">IG</a><a href="#">TW</a><a href="#">LI</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
